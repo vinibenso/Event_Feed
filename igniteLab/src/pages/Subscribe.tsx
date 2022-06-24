@@ -3,8 +3,8 @@ import { useState, FormEvent } from "react";
 import { Logo } from "../components/Logo";
 
 
-const CREATE_SUBSRIBER_MUTATION = gql`
-    mutation CreateSubscriber ($name: String!, $email: String!) {
+const CREATE_SUBSCRIBER_MUTATION = gql`
+    mutation createSubscriber ($name: String!, $email: String!) {
   createSubscriber(data: {name: $name, email: $email }) {
     id
   }
@@ -15,7 +15,7 @@ export function Subscribe () {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
 
-    const [createSubscriber] = useMutation(CREATE_SUBSRIBER_MUTATION)
+    const [createSubscriber] = useMutation(CREATE_SUBSCRIBER_MUTATION)
 
     function handleSubscribe(event: FormEvent) {
         event.preventDefault();
