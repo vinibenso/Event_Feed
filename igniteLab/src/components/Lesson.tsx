@@ -8,13 +8,13 @@ interface LessonProps {
     title: string;
     slug: string;
     availableAt: Date;
-    type: "Live" | "Class";
+    type: 'Live' | 'Class';
 }
 
 export function Lesson(props: LessonProps) {
     const {slug } = useParams <{ slug: string }>()
 
-    const isLessonAvailable = isPast(props.availableAt);
+    const isLessonAvailable = isPast(props.availableAt)
     const availableDateFormatted = format(props.availableAt, "EEEE' * 'd' de 'MMMM' * 'k'h'mm' ",
      {locale: ptBR,
     })
